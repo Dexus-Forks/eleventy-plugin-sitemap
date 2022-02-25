@@ -18,11 +18,12 @@ const sitemapItems = require("./sitemapItems");
 module.exports = async function sitemap(items, options) {
   const outputDestination = options && options.output_destination || ".";
   const outputGzip = options && options.gzip || false;
+  const outputLimit = options && options.limit ?? 45000;
   const streamOptions = options && options.sitemap;
   const stream = new SitemapStream(streamOptions);
   const links = sitemapItems(items, options);
   const sms = new SitemapAndIndexStream({
-    limit: 50000, // defaults to 45k
+    limit: outputLimit, // defaults to 45k
     lastmodDateOnly: false, // print date not time
     xslUrl: streamOptions && streamOptions.xslUrl,
     // SitemapAndIndexStream will call this user provided function every time
