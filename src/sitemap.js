@@ -43,7 +43,7 @@ module.exports = async function sitemap(items, options) {
 
   sms
     .pipe(createGzip())
-    .pipe(createWriteStream(resolve('./sitemap-index.xml.gz')));
+    .pipe(createWriteStream(resolve(`${outputDestination}./sitemap-index.xml.gz`)));
 
   for (const link of links) {
     sms.write(link);
