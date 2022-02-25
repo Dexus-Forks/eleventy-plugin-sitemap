@@ -16,7 +16,8 @@ const sitemapItems = require("./sitemapItems");
  * @returns {Promise<string>} XML sitemap.
  */
 module.exports = async function sitemap(items, options) {
-  const outputDestination = options && options.output_destination;
+  const outputDestination = options && options.output_destination || ".";
+  const outputGzip = options && options.gzip || false;
   const streamOptions = options && options.sitemap;
   const stream = new SitemapStream(streamOptions);
   const links = sitemapItems(items, options);
@@ -35,16 +36,20 @@ module.exports = async function sitemap(items, options) {
       const path = `./sitemap-${i}.xml`; 
   
       const ws = sitemapStream
-        .pipe(createGzip()) // compress the output of the sitemap
-        .pipe(createWriteStream(resolve(output_path + '.gz'))); // write it to sitemap-NUMBER.xml
+      if(outputGzip) {
+        ws.pipe(createGzip()) // compress the output of the sitemap
+      }
+      ws.pipe(createWriteStream(resolve(output_path + '.gz'))); // write it to sitemap-NUMBER.xml
   
       return [new URL(`${path}`, `${streamOptions.hostname}/`).toString(), sitemapStream, ws];
     },
   });
 
   sms
-    .pipe(createGzip())
-    .pipe(createWriteStream(resolve(`${outputDestination}/sitemap-index.xml.gz`)));
+  if(outputGzip) {
+    sms.pipe(createGzip()) // compress the output of the sitemap
+  }
+  sms.pipe(createWriteStream(resolve(`${outputDestination}/sitemap-index.xml.gz`)));
 
   for (const link of links) {
     sms.write(link);
