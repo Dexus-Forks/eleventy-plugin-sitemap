@@ -1,9 +1,9 @@
 # eleventy-plugin-sitemap
 
-[![npm](https://img.shields.io/npm/v/@quasibit/eleventy-plugin-sitemap)](https://www.npmjs.com/package/@quasibit/eleventy-plugin-sitemap)
-[![Release workflow](https://github.com/quasibit/eleventy-plugin-sitemap/workflows/Release/badge.svg)](https://github.com/quasibit/eleventy-plugin-sitemap/actions?query=workflow%3ARelease)
-[![Test workflow](https://github.com/quasibit/eleventy-plugin-sitemap/workflows/Test/badge.svg)](https://github.com/quasibit/eleventy-plugin-sitemap/actions?query=workflow%3ATest)
-[![codecov](https://codecov.io/gh/quasibit/eleventy-plugin-sitemap/branch/master/graph/badge.svg?token=F4X4KPQQCC)](https://codecov.io/gh/quasibit/eleventy-plugin-sitemap)
+[![npm](https://img.shields.io/npm/v/@dexus1985/eleventy-plugin-sitemap)](https://www.npmjs.com/package/@dexus1985/eleventy-plugin-sitemap)
+[![Release workflow](https://github.com/dexus-forks/eleventy-plugin-sitemap/workflows/Release/badge.svg)](https://github.com/dexus-forks/eleventy-plugin-sitemap/actions?query=workflow%3ARelease)
+[![Test workflow](https://github.com/dexus-forks/eleventy-plugin-sitemap/workflows/Test/badge.svg)](https://github.com/dexus-forks/eleventy-plugin-sitemap/actions?query=workflow%3ATest)
+[![codecov](https://codecov.io/gh/dexus-forks/eleventy-plugin-sitemap/branch/master/graph/badge.svg?token=F4X4KPQQCC)](https://codecov.io/gh/dexus-forks/eleventy-plugin-sitemap)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -11,21 +11,26 @@
 [Eleventy](https://www.11ty.dev/) plugin to generate a sitemap using
 [ekalinin/sitemap](https://github.com/ekalinin/sitemap.js) generator.
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Options](#options)
-- [Examples](#examples)
-- [Advanced usage](#advanced-usage)
-- [Related plugins](#related-plugins)
-- [Maintainers](#maintainers)
-- [License](#license)
+- [eleventy-plugin-sitemap](#eleventy-plugin-sitemap)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Options](#options)
+  - [Examples](#examples)
+  - [Advanced usage](#advanced-usage)
+    - [Customizing sitemap properties](#customizing-sitemap-properties)
+    - [Exclude pages from the sitemap](#exclude-pages-from-the-sitemap)
+    - [Create a multilingual sitemap](#create-a-multilingual-sitemap)
+  - [Related plugins](#related-plugins)
+  - [Maintainers](#maintainers)
+    - [Origin](#origin)
+  - [License](#license)
 
 ## Installation
 
 Install the package:
 
 ```sh
-npm install --save @quasibit/eleventy-plugin-sitemap
+npm install --save @dexus1985/eleventy-plugin-sitemap
 ```
 
 Add the plugin to your [Eleventy configuration](https://www.11ty.dev/docs/config/)
@@ -238,6 +243,10 @@ You can see an example with dynamic hostnames in [./examples/multilingual/](./ex
   generate JSON-LD structured data.
 
 ## Maintainers
+
+- [@dexus](https://github.com/dexus)
+
+### Origin
 
 - [@nunof07](https://github.com/nunof07)
 
