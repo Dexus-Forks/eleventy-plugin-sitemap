@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/quasibit/eleventy-plugin-sitemap.git"
+    "url": "git+https://github.com/dexus-forks/eleventy-plugin-sitemap.git"
   },
   "keywords": [
     "11ty",
@@ -40,16 +40,23 @@
     "eleventy-plugin",
     "sitemap"
   ],
+  "contributors": [
+    {
+      "name": "Nuno Freitas",
+      "email": "nuno.freitas@quasibit.com",
+      "homepage": "https://www.quasibit.com/"
+    }
+  ],
   "author": {
-    "name": "Nuno Freitas",
-    "email": "nuno.freitas@quasibit.com",
-    "homepage": "https://www.quasibit.com/"
+    "name": "Josef Fröhle",
+    "email": "github@josef-froehle.de",
+    "homepage": "https://www.josef-froehle.de/"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/quasibit/eleventy-plugin-sitemap/issues"
+    "url": "https://github.com/dexus-forks/eleventy-plugin-sitemap/issues"
   },
-  "homepage": "https://github.com/quasibit/eleventy-plugin-sitemap#readme",
+  "homepage": "https://github.com/dexus-forks/eleventy-plugin-sitemap#readme",
   "dependencies": {
     "array-flat-polyfill": "^1.0.1",
     "sitemap": "^6.3.2"
