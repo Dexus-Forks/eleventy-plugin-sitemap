@@ -31,13 +31,14 @@ module.exports = async function sitemap(items, options) {
       // if your server automatically serves sitemap.xml.gz when requesting sitemap.xml leave this line be
       // otherwise you will need to add .gz here and remove it a couple lines below so that both the index 
       // and the actual file have a .gz extension
-      const path = `${outputDestination}/sitemap-${i}.xml`; 
+      const output_path = `${outputDestination}/sitemap-${i}.xml`; 
+      const path = `./sitemap-${i}.xml`; 
   
       const ws = sitemapStream
         .pipe(createGzip()) // compress the output of the sitemap
-        .pipe(createWriteStream(resolve(path + '.gz'))); // write it to sitemap-NUMBER.xml
+        .pipe(createWriteStream(resolve(output_path + '.gz'))); // write it to sitemap-NUMBER.xml
   
-      return [new URL(`../${path}`, `${streamOptions.hostname}/`).toString(), sitemapStream, ws];
+      return [new URL(`${path}`, `${streamOptions.hostname}/`).toString(), sitemapStream, ws];
     },
   });
 
