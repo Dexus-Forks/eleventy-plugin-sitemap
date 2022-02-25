@@ -37,7 +37,7 @@ module.exports = async function sitemap(items, options) {
         .pipe(createGzip()) // compress the output of the sitemap
         .pipe(createWriteStream(resolve(path + '.gz'))); // write it to sitemap-NUMBER.xml
   
-      return [new URL(path, `${streamOptions.hostname}/_site/`).toString(), sitemapStream, ws];
+      return [new URL(`../${path}`, `${streamOptions.hostname}/`).toString(), sitemapStream, ws];
     },
   });
 
