@@ -1,5 +1,8 @@
 "use strict";
 const { createReadStream, createWriteStream } = require('fs');
+const { resolve } = require('path');
+const { createGzip } = require('zlib')
+const { Readable } = require('stream')
 const { SitemapAndIndexStream, SitemapStream, streamToPromise } = require("sitemap");
 
 const sitemapItems = require("./sitemapItems");
