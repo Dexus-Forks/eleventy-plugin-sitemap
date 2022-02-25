@@ -14,6 +14,6 @@ const sitemap = require("./src/sitemap");
  */
 module.exports = function eleventyPluginSitemap(eleventyConfig, options) {
   const finalOptions = options || {};
-
+  let items = options && options.items;
   return sitemap(items, finalOptions);
 };
