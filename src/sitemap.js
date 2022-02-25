@@ -34,7 +34,6 @@ module.exports = async function sitemap(items, options) {
       const path = `${outputDestination}/sitemap-${i}.xml`; 
   
       const ws = sitemapStream
-        .pipe(createWriteStream(resolve(path)))
         .pipe(createGzip()) // compress the output of the sitemap
         .pipe(createWriteStream(resolve(path + '.gz'))); // write it to sitemap-NUMBER.xml
   
@@ -43,7 +42,6 @@ module.exports = async function sitemap(items, options) {
   });
 
   sms
-    .pipe(createWriteStream(resolve('./sitemap-index.xml')))
     .pipe(createGzip())
     .pipe(createWriteStream(resolve('./sitemap-index.xml.gz')));
 
