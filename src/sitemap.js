@@ -1,5 +1,5 @@
 "use strict";
-
+const { createReadStream, createWriteStream } = require('fs');
 const { SitemapAndIndexStream, SitemapStream, streamToPromise } = require("sitemap");
 
 const sitemapItems = require("./sitemapItems");
