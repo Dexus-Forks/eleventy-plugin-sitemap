@@ -37,9 +37,9 @@ module.exports = async function sitemap(items, options) {
   
       const ws = sitemapStream
       if(outputGzip === true) {
-        ws = ws.pipe(createGzip()) // compress the output of the sitemap
+        ws = ws.pipe(createGzip()); // compress the output of the sitemap
       }
-      ws.pipe(createWriteStream(resolve(output_path + '.gz'))); // write it to sitemap-NUMBER.xml
+      ws.pipe(createWriteStream(resolve(output_path + outputGzip?'.gz':''))); // write it to sitemap-NUMBER.xml
   
       return [new URL(`${path}`, `${streamOptions.hostname}/`).toString(), sitemapStream, ws];
     },
@@ -48,7 +48,7 @@ module.exports = async function sitemap(items, options) {
   if(outputGzip === true) {
     sms = sms.pipe(createGzip()) // compress the output of the sitemap
   }
-  sms.pipe(createWriteStream(resolve(`${outputDestination}/sitemap-index.xml.gz`)));
+  sms.pipe(createWriteStream(resolve(`${outputDestination}/sitemap-index.xml`+outputGzip?'.gz':'')));
 
   for (const link of links) {
     sms.write(link);
