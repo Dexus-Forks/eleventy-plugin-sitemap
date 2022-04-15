@@ -20,7 +20,7 @@ module.exports = async function sitemap(items, options) {
   const outputGzip = options && options.gzip || false;
   const outputLimit = options && options.limit || 45000;
   const streamOptions = options && options.sitemap;
-  const stream = new SitemapStream(streamOptions);
+  //const stream = new SitemapStream(streamOptions);
   const links = sitemapItems(items, options);
   const sms = new SitemapAndIndexStream({
     limit: outputLimit, // defaults to 45k
@@ -32,7 +32,7 @@ module.exports = async function sitemap(items, options) {
     getSitemapStream: (i) => {
       const sitemapStream = new SitemapStream(streamOptions);
       // if your server automatically serves sitemap.xml.gz when requesting sitemap.xml leave this line be
-      // otherwise you will need to add .gz here and remove it a couple lines below so that both the index 
+      // otherwise you will need to add .gz here and remove it a couple lines below so that both the index
       // and the actual file have a .gz extension
       const output_path = `${outputDestination}/sitemap-${i}.xml`;
       const path = `./sitemap-${i}.xml`;

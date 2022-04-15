@@ -10,5 +10,5 @@ const sitemapProperty = require("./sitemapProperty");
  * @returns {boolean} True if the item is ignored.
  */
 module.exports = function isIgnored(item) {
-  return !item || !item.url || Boolean(sitemapProperty(item, "ignore"));
+  return !item || !(item.data && item.data.permalink) || !item.url || Boolean(sitemapProperty(item, "ignore"));
 };
